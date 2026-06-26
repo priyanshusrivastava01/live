@@ -1,46 +1,37 @@
 import React from 'react';
-import { ShieldAlert, BarChart3, Users, Zap, Layers, RefreshCw } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ProblemSection() {
   const problems = [
     {
-      icon: <Layers className="w-5 h-5" />,
-      title: "Scaling Plateaus",
-      desc: "Your organization has hit an invisible ceiling. Legacy workflows and current staffing are stretched, preventing you from onboarding new clients without operational decay."
+      num: "01",
+      title: "Commodity Positioning",
+      desc: "Struggling to command premium pricing. Your offering is perceived as a commodity because your messaging fails to reflect the high-tier value you deliver."
     },
     {
-      icon: <BarChart3 className="w-5 h-5" />,
-      title: "Diluted Brand Authority",
-      desc: "Struggling to command premium pricing. Your offering is perceived as a commodity because your messaging fails to reflect the true, high-tier value you deliver."
+      num: "02",
+      title: "The Founder Dependency Trap",
+      desc: "The entire business revolves around your daily intervention. You are trapped in micro-management, making the enterprise exhausting to run and impossible to scale."
     },
     {
-      icon: <Users className="w-5 h-5" />,
-      title: "Founder Dependency Loop",
-      desc: "The entire business revolves around your personal daily intervention. You are trapped in micro-management, making the enterprise unsellable and exhausting to run."
+      num: "03",
+      title: "Fragmented Client Acquisition",
+      desc: "High-quality leads are dropping off due to unconfigured CRM pipelines. There is no automated system to systematically nurture and qualify prospects."
     },
     {
-      icon: <ShieldAlert className="w-5 h-5" />,
-      title: "Leaky Sales Pipelines",
-      desc: "High-quality leads are dropping off due to fragmented customer relationship management. There is no automated, systematic process to nurture prospects into closes."
-    },
-    {
-      icon: <Zap className="w-5 h-5" />,
-      title: "Manual Operational Friction",
-      desc: "Valuable resources are lost to repetitive manual administration. A lack of modern system integrations reduces margins and slows down service delivery."
-    },
-    {
-      icon: <RefreshCw className="w-5 h-5" />,
-      title: "Absence of Clear Exit Paths",
-      desc: "You have no defined path for equity transition, succession, or acquisition. The company lacks the structured asset valuation necessary for premium exit multiples."
+      num: "04",
+      title: "Repetitive Administrative Overhead",
+      desc: "Valuable resource hours are lost to manual tasks and redundant processes. A lack of modern software integration reduces margins and slows down delivery."
     }
   ];
 
   const containerVariants = {
-    hidden: {},
+    hidden: { opacity: 0 },
     visible: {
+      opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.15,
+        delayChildren: 0.1
       }
     }
   };
@@ -50,67 +41,83 @@ export default function ProblemSection() {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { type: 'spring', stiffness: 100, damping: 15 }
+      transition: { type: 'spring', stiffness: 90, damping: 15 }
     }
   };
 
   return (
-    <section className="bg-bgCanvas py-24 px-6 md:px-12 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="problems" className="bg-bgCanvas py-24 md:py-36 px-6 md:px-12 relative overflow-hidden border-t border-black/[0.03]">
+      {/* Background blurs */}
+      <div className="absolute top-1/2 left-10 w-[30%] h-[30%] bg-accentGold/[0.015] rounded-full filter blur-[100px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto text-center">
         
         {/* Header Block */}
-        <div className="max-w-3xl mb-16 space-y-4">
+        <div className="max-w-3xl mx-auto mb-20 space-y-6">
           <span className="text-[10px] uppercase font-bold tracking-widest text-accentGold font-heading block">
             Systemic Bottlenecks
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-textPrimary tracking-tight leading-none">
-            Is Your Business Facing These Growth Constraints?
+          
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold text-black tracking-tight leading-[1.02] font-heading">
+            You Don't Have a Scaling <br />
+            Problem. <br />
+            <span className="font-serif font-normal text-[#686D73] italic block mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-[5rem] tracking-tight leading-[1.05]">
+              You Have a <span className="text-accentGold font-bold font-serif italic">Systems</span> <br />
+              Problem.
+            </span>
           </h2>
-          <p className="text-sm md:text-base text-textSecondary font-light leading-relaxed max-w-2xl">
-            Unchecked organizational friction compounds over time. Identifying these core bottlenecks is the first critical step toward establishing market dominance.
+
+          <p className="text-sm md:text-base text-textSecondary font-light leading-relaxed max-w-xl mx-auto font-body">
+            When your operations are structured, documented, and automated — <span className="font-bold text-textPrimary">growth is predictable</span>. But when systems are broken, every new client creates organizational chaos. The fix isn't more headcount. <span className="font-bold text-accentGold">It's the right operating platform.</span>
           </p>
         </div>
 
-        {/* Card Grid */}
+        {/* 2x2 Grid Container with Shared Border lines */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 border border-black/[0.06] rounded-[2rem] overflow-hidden bg-white shadow-premium max-w-5xl mx-auto text-left"
         >
-          {problems.map((prob, idx) => (
-            <motion.div
-              key={idx}
-              variants={cardVariants}
-              whileHover={{ 
-                y: -6, 
-                borderColor: 'rgba(201, 162, 39, 0.4)',
-                boxShadow: '0 20px 40px -15px rgba(0, 0, 0, 0.05)'
-              }}
-              className="bg-white p-8 rounded-premium border border-black/[0.04] transition-all duration-300 flex flex-col justify-between group"
-            >
-              <div className="space-y-6">
-                {/* Icon Container */}
-                <div className="p-3 bg-black/[0.02] text-textPrimary rounded-2xl w-fit group-hover:bg-accentGold group-hover:text-white transition-all duration-500">
-                  {prob.icon}
-                </div>
-                
-                {/* Problem Info */}
-                <div className="space-y-2">
-                  <h3 className="text-lg font-bold text-textPrimary group-hover:text-accentGold transition-colors duration-300">
+          {problems.map((prob, idx) => {
+            // Calculate borders for a clean 2x2 quadrant layout
+            const borderClasses = `
+              p-8 md:p-12 flex flex-col justify-between hover:bg-black/[0.005] transition-colors duration-300 group
+              ${idx === 0 ? 'border-b md:border-r border-black/[0.06]' : ''}
+              ${idx === 1 ? 'border-b border-black/[0.06]' : ''}
+              ${idx === 2 ? 'border-b md:border-b-0 md:border-r border-black/[0.06]' : ''}
+              ${idx === 3 ? '' : ''}
+            `;
+
+            return (
+              <motion.div
+                key={idx}
+                variants={cardVariants}
+                className={borderClasses}
+              >
+                <div className="space-y-4">
+                  {/* Huge Monospace Number */}
+                  <span className="font-heading text-5xl md:text-6xl font-black tracking-tighter text-accentGold/20 block group-hover:text-accentGold/45 transition-colors duration-500">
+                    {prob.num}
+                  </span>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-textPrimary group-hover:text-accentGold transition-colors duration-300 tracking-tight font-heading">
                     {prob.title}
                   </h3>
-                  <p className="text-[13px] text-textSecondary leading-relaxed font-light">
+                  
+                  {/* Description */}
+                  <p className="text-[13px] sm:text-sm text-textSecondary leading-relaxed font-body font-light">
                     {prob.desc}
                   </p>
                 </div>
-              </div>
-
-              {/* Bottom Decorative Highlight */}
-              <div className="w-8 h-[1px] bg-black/10 mt-8 group-hover:w-full group-hover:bg-accentGold transition-all duration-500" />
-            </motion.div>
-          ))}
+                
+                {/* Visual accent bar */}
+                <div className="w-8 h-[1px] bg-black/10 mt-8 group-hover:w-full group-hover:bg-accentGold transition-all duration-500" />
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

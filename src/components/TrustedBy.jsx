@@ -1,107 +1,70 @@
 import React from 'react';
-import { Award, Briefcase, FileCheck2, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function TrustedBy() {
-  const corporateClients = [
-    { name: '[CLIENT LOGO 1]', type: 'Replace with Client Logo' },
-    { name: '[CLIENT LOGO 2]', type: 'Replace with Client Logo' },
-    { name: '[CLIENT LOGO 3]', type: 'Replace with Client Logo' },
-    { name: '[CLIENT LOGO 4]', type: 'Replace with Client Logo' },
-    { name: '[CLIENT LOGO 5]', type: 'Replace with Client Logo' },
-    { name: '[CLIENT LOGO 6]', type: 'Replace with Client Logo' },
-    { name: '[CLIENT LOGO 7]', type: 'Replace with Client Logo' },
-    { name: '[CLIENT LOGO 8]', type: 'Replace with Client Logo' },
-  ];
-
-  const credentials = [
+  const stats = [
     {
-      icon: <Award className="w-5 h-5" />,
-      title: "[Replace with Award Title]",
-      org: "[Replace with Award Organization / Year]",
-      desc: "[Replace with a brief sentence describing this accolade, award significance, or recognition details.]"
+      highlight: "TEDx",
+      highlightColor: "text-accentGold", // Styled gold tone
+      label: "SPEAKER"
     },
     {
-      icon: <FileCheck2 className="w-5 h-5" />,
-      title: "[Replace with Executive Certification]",
-      org: "[Replace with Institution / Academy Name]",
-      desc: "[Replace with details about the certification requirements, executive specialization, or M&A frameworks studied.]"
+      highlight: "Amazon",
+      highlightColor: "text-textPrimary font-extrabold",
+      label: "#1 BESTSELLING AUTHOR"
     },
     {
-      icon: <Briefcase className="w-5 h-5" />,
-      title: "[Replace with Board Membership]",
-      org: "[Replace with Syndicate / Venture Org Name]",
-      desc: "[Replace with details regarding your active guidance, advising limits, international partnerships, or licensing.]"
+      highlight: "100+",
+      highlightColor: "text-textPrimary font-black",
+      label: "BRANDS TRANSFORMED"
     },
     {
-      icon: <Globe className="w-5 h-5" />,
-      title: "[Replace with Media Mention / Column]",
-      org: "[Replace with Publication / Channel Name]",
-      desc: "[Replace with a short description of topics you contribute, shared systems blueprints, or featured interview titles.]"
+      highlight: "8 Fig",
+      highlightColor: "text-textPrimary font-black",
+      label: "REVENUE GENERATED"
+    },
+    {
+      highlight: "Systems",
+      highlightColor: "text-textPrimary font-bold italic font-serif",
+      label: "CONSULTING"
     }
   ];
 
   return (
-    <section className="bg-[#FAFAF8] py-16 border-y border-black/[0.04] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <p className="text-center text-[10px] uppercase font-bold tracking-widest text-textSecondary mb-8">
-          Trusted by Industry Leaders and Market Disruptors
-        </p>
-
-        {/* Infinite Marquee Container */}
-        <div className="relative w-full flex items-center overflow-hidden mb-16 select-none">
-          {/* Left vignette blur overlay */}
-          <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-bgCanvas to-transparent z-10 pointer-events-none" />
-          {/* Right vignette blur overlay */}
-          <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-bgCanvas to-transparent z-10 pointer-events-none" />
-
-          {/* Scrolling Content */}
-          <div className="animate-marquee whitespace-nowrap flex items-center">
-            {/* Double the list to maintain seamless looping */}
-            {[...corporateClients, ...corporateClients].map((client, idx) => (
-              <div
-                key={idx}
-                className="inline-flex flex-col items-start mx-12 md:mx-16 font-heading"
-              >
-                <span className="text-lg md:text-xl font-black tracking-[0.15em] text-textPrimary/80">
-                  {client.name}
-                </span>
-                <span className="text-[9px] font-bold text-accentGold uppercase tracking-widest mt-0.5">
-                  {client.type}
-                </span>
-              </div>
-            ))}
-          </div>
+    <section className="bg-[#F1EAD8] border-y border-black/[0.06] py-7 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
+        
+        {/* Left Side Header */}
+        <div className="flex items-center gap-4 w-full lg:w-auto shrink-0 justify-center lg:justify-start">
+          <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-textSecondary font-heading">
+            Trusted Authority In
+          </span>
+          <div className="hidden lg:block w-px h-8 bg-black/10 mx-2" />
         </div>
 
-        {/* Credentials and Accreditations Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
-          {credentials.map((cred, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="bg-white p-6 rounded-premium border border-black/[0.03] shadow-premium flex flex-col justify-between"
-            >
-              <div className="flex flex-col space-y-4">
-                <div className="p-2.5 bg-accentGold/[0.07] text-accentGold rounded-xl w-fit">
-                  {cred.icon}
-                </div>
-                <div>
-                  <h3 className="text-sm font-extrabold text-textPrimary leading-snug">
-                    {cred.title}
-                  </h3>
-                  <span className="text-[10px] font-semibold text-accentGold tracking-wide block mt-1">
-                    {cred.org}
-                  </span>
-                </div>
+        {/* Right Side Items Grid */}
+        <div className="w-full flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap items-center justify-between gap-6 sm:gap-8 lg:gap-4 flex-1">
+          {stats.map((stat, idx) => (
+            <React.Fragment key={idx}>
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left font-heading">
+                {/* Highlight Number/Brand */}
+                <span className={`text-base sm:text-lg tracking-tight leading-none ${stat.highlightColor}`}>
+                  {stat.highlight}
+                </span>
+                {/* Secondary Label */}
+                <span className="text-[9px] font-bold text-textSecondary uppercase tracking-widest mt-1">
+                  {stat.label}
+                </span>
               </div>
-              <p className="text-[11px] text-textSecondary leading-relaxed mt-4">
-                {cred.desc}
-              </p>
-            </motion.div>
+              
+              {/* Divider between items (hidden on last, hidden on mobile/responsive based on layout) */}
+              {idx < stats.length - 1 && (
+                <div className="hidden lg:block w-px h-8 bg-black/10 shrink-0" />
+              )}
+            </React.Fragment>
           ))}
         </div>
+
       </div>
     </section>
   );

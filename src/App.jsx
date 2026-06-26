@@ -3,8 +3,6 @@ import SmoothScroll from './components/SmoothScroll';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
-import Statistics from './components/Statistics'; // Served as Trust Section
-import Authority from './components/Authority'; // As Featured In Section
 import ProblemSection from './components/ProblemSection';
 import SignatureFramework from './components/SignatureFramework';
 import Services from './components/Services';
@@ -35,13 +33,7 @@ export default function App() {
           {/* 2. Client Trust Marquee */}
           <TrustedBy />
 
-          {/* 3. Verified Statistics Metric Counter Grid */}
-          <Statistics />
-
-          {/* 4. As Featured In Authority Grid */}
-          <Authority />
-
-          {/* 5. Deconstructed Bottlenecks */}
+          {/* 3. Deconstructed Bottlenecks */}
           <ProblemSection />
 
           {/* 6. Signature Process Framework Timeline */}
