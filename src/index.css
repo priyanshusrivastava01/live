@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bgCanvas: #FAFAF8;
+  --color-bgDark: #0F0F10;
+  --color-textPrimary: #111111;
+  --color-textSecondary: #666666;
+  --color-accentGold: #C9A227;
+
+  --font-heading: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --shadow-premium: 0 10px 40px -10px rgba(0, 0, 0, 0.04);
+  --shadow-premiumDark: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+
+  --radius-premium: 20px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: initial; /* Lenis handles smooth scrolling */
+  }
+
+  body {
+    background-color: #FAFAF8;
+    color: #111111;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+    color: #111111;
+    font-weight: 700;
+  }
+}
+
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAFAF8;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5E5E0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A227;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Text Reveal / Clip-Path for image reveal */
+.reveal-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.reveal-content {
+  transform: translateY(100%);
+}
+
+/* Glassmorphism utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-card-dark {
+  background: rgba(15, 15, 16, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Custom floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Magnetic button glow */
+.magnetic-btn-glow {
+  position: relative;
+}
+.magnetic-btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, #C9A227, #E5C158, #C9A227);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.magnetic-btn-glow:hover::after {
+  opacity: 1;
+}
+
+/* Utility to hide/show scrollbars dynamically if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
