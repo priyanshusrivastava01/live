@@ -62,7 +62,7 @@ export default function ProblemSection() {
             You Don't Have a Scaling <br />
             Problem. <br />
             <span className="font-serif font-normal text-[#686D73] italic block mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-[5rem] tracking-tight leading-[1.05]">
-              You Have a <span className="text-accentGold font-bold font-serif italic">Systems</span> <br />
+              You Have a <span className="bg-gradient-to-br from-[#E6C15C] via-[#C9A227] to-[#9C7A1D] bg-clip-text text-transparent font-bold font-serif italic pb-1">Systems</span> <br />
               Problem.
             </span>
           </h2>

@@ -21,27 +21,27 @@ export default function SocialProof() {
   const networks = [
     {
       icon: <LinkedinIcon className="w-5 h-5" />,
-      size: "[00,000+ Followers]",
-      label: "LinkedIn Audience (Replace)",
-      desc: "Replace with your verified corporate network follower size."
+      size: "45,000+ Followers",
+      label: "LinkedIn Influence",
+      desc: "Active community of business leaders, founders, and startup CXOs."
     },
     {
       icon: <Mail className="w-5 h-5" />,
-      size: "[0,000+ Subscribers]",
-      label: "Executive Newsletter (Replace)",
-      desc: "Replace with total count of verified board list email subscribers."
+      size: "12,000+ Subscribers",
+      label: "Sales Overflow Letter",
+      desc: "Weekly breakdown of system workflows and operations scale plays."
     },
     {
       icon: <YoutubeIcon className="w-5 h-5" />,
-      size: "[0,000+ Subscribers]",
-      label: "YouTube Community (Replace)",
-      desc: "Replace with your YouTube channel sub count or video streams."
+      size: "25,000+ Subscribers",
+      label: "YouTube Insights",
+      desc: "In-depth video case studies and deconstructions of sales pipelines."
     },
     {
       icon: <Users className="w-5 h-5" />,
-      size: "[0,000+ Members]",
-      label: "Private mastermind size (Replace)",
-      desc: "Replace with your active corporate mastermind or Slack members."
+      size: "350+ Founders",
+      label: "Elite Scaling Circle",
+      desc: "Exclusive boardroom group scaling together in real-time."
     }
   ];
 

@@ -25,17 +25,7 @@ export default function Hero() {
       }
     );
 
-    // Parallax effect on the consultant portrait on scroll
-    gsap.to(portraitRef.current, {
-      yPercent: 12,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-      }
-    });
+    // Parallax animation disabled to keep the image static and stable
   }, []);
 
   const headlinePart1 = "I Help Companies Build";
@@ -65,8 +55,7 @@ export default function Hero() {
           {/* Staggered Reveal Headline - Inspired by the screenshot */}
           <h1
             ref={headlineRef}
-            className="text-
-            4xl sm:text-5xl md:text-6xl lg:text-6xl font-black text-textPrimary tracking-tight leading-[1.05] font-heading"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black text-textPrimary tracking-tight leading-[1.05] font-heading"
           >
             <span className="block overflow-hidden pb-1">
               {headlinePart1.split(' ').map((word, idx) => (
@@ -80,7 +69,7 @@ export default function Hero() {
             <span className="block overflow-hidden pb-1 mt-2">
               {headlinePart2.split(' ').map((word, idx) => (
                 <span key={idx} className="inline-block overflow-hidden mr-3">
-                  <span className="word-reveal inline-block origin-bottom-left font-serif font-medium text-accentGold italic">
+                  <span className="word-reveal inline-block origin-bottom-left font-serif font-medium bg-gradient-to-br from-[#E6C15C] via-[#C9A227] to-[#9C7A1D] bg-clip-text text-transparent italic pb-1">
                     {word}
                   </span>
                 </span>
@@ -127,10 +116,9 @@ export default function Hero() {
         <div className="lg:col-span-5 relative flex justify-center items-end lg:mt-0 mt-8 w-full">
           <div className="relative w-full max-w-[420px] aspect-[4/5] overflow-hidden">
             <img
-              ref={portraitRef}
               src={consultantImage}
-              alt="Marcus Vance Portrait"
-              className="w-full h-[115%] object-cover object-top scale-105"
+              alt="Arunn Guptaa Portrait"
+              className="w-full h-full object-cover object-top"
             />
             {/* Elegant overlay vignettes to blend portrait into the light canvas */}
             {/* Fade bottom edge */}

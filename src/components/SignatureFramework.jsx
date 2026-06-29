@@ -48,7 +48,7 @@ export default function SignatureFramework() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold text-black tracking-tight leading-[1.02] font-heading">
               Strategy Is the Tap.
               <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[5rem] font-serif italic text-[#686D73] mt-4 font-normal">
-                <span className="text-accentGold font-bold font-serif">Growth</span> Is the Water.
+                <span className="bg-gradient-to-br from-[#E6C15C] via-[#C9A227] to-[#9C7A1D] bg-clip-text text-transparent font-bold font-serif pb-1">Growth</span> Is the Water.
               </span>
             </h2>
           </div>
@@ -105,7 +105,7 @@ export default function SignatureFramework() {
           <p className="font-serif italic text-2xl md:text-3xl lg:text-4xl text-textPrimary leading-relaxed">
             &ldquo;When the system is right, growth doesn't trickle.
             <span className="block mt-2">
-              It <span className="text-accentGold font-serif italic font-semibold">overflows.</span>&rdquo;
+              It <span className="bg-gradient-to-br from-[#E6C15C] via-[#C9A227] to-[#9C7A1D] bg-clip-text text-transparent font-serif italic font-semibold pb-1">overflows.</span>&rdquo;
             </span>
           </p>
         </div>

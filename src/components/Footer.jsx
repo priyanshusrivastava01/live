@@ -34,15 +34,41 @@ const InstagramIcon = ({ className }) => (
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
     if (!email) return;
-    setSubscribed(true);
-    setTimeout(() => {
-      setEmail('');
-      setSubscribed(false);
-    }, 3000);
+    setLoading(true);
+    setError(null);
+    setSubscribed(false);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubscribed(true);
+        setEmail('');
+        setTimeout(() => setSubscribed(false), 5000);
+      } else {
+        setError(data.error || 'Subscription failed. Please try again.');
+        setTimeout(() => setError(null), 5000);
+      }
+    } catch (err) {
+      setError('Server is offline.');
+      setTimeout(() => setError(null), 5000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const currentYear = new Date().getFullYear();
@@ -57,8 +83,8 @@ export default function Footer() {
           {/* Logo & Narrative */}
           <div className="lg:col-span-5 space-y-6">
             <a href="#home" className="flex items-center space-x-2 text-xl font-extrabold tracking-tight">
-              <span className="font-heading text-white">MARCUS</span>
-              <span className="font-heading text-accentGold font-light">VANCE</span>
+              <span className="font-heading text-white">ARUNN</span>
+              <span className="font-heading text-accentGold font-light">GUPTAA</span>
               <span className="w-1.5 h-1.5 rounded-full bg-accentGold inline-block" />
             </a>
             <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed max-w-sm">
@@ -93,24 +119,37 @@ export default function Footer() {
               </p>
             </div>
 
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-stretch gap-3 max-w-md">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="[Enter Email Address]"
-                className="bg-white/5 border border-white/10 rounded-full px-5 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-accentGold/50 flex-grow transition-colors"
-              />
-              <Magnetic>
-                <button
-                  type="submit"
-                  className="px-6 py-3 rounded-full bg-white text-bgDark text-xs font-bold uppercase tracking-wider hover:bg-accentGold hover:text-white transition-colors duration-300 w-full sm:w-auto cursor-pointer"
-                >
-                  {subscribed ? "Subscribed" : "Subscribe"}
-                </button>
-              </Magnetic>
-            </form>
+            <div className="space-y-3">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-stretch gap-3 max-w-md">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter Email Address"
+                  className="bg-white/5 border border-white/10 rounded-full px-5 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-accentGold/50 flex-grow transition-colors"
+                />
+                <Magnetic>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="px-6 py-3 rounded-full bg-white text-bgDark text-xs font-bold uppercase tracking-wider hover:bg-accentGold hover:text-white transition-colors duration-300 w-full sm:w-auto cursor-pointer disabled:opacity-50"
+                  >
+                    {loading ? "Submitting..." : subscribed ? "Subscribed ✓" : "Subscribe"}
+                  </button>
+                </Magnetic>
+              </form>
+              {error && (
+                <p className="text-[10px] text-red-400 font-light text-left pl-2">
+                  ⚠ {error}
+                </p>
+              )}
+              {subscribed && (
+                <p className="text-[10px] text-emerald-400 font-light text-left pl-2">
+                  ✓ Successfully subscribed to executive brief!
+                </p>
+              )}
+            </div>
           </div>
 
         </div>

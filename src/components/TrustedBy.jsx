@@ -31,7 +31,7 @@ export default function TrustedBy() {
   ];
 
   return (
-    <section className="bg-[#F1EAD8] border-y border-black/[0.06] py-7 overflow-hidden">
+    <section className="bg-[#F5F2EB] border-y border-black/[0.06] py-7 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
         
         {/* Left Side Header */}

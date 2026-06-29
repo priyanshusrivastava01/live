@@ -2,6 +2,10 @@ import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+import insight1 from '../assets/insight_1.png';
+import insight2 from '../assets/insight_2.png';
+import insight3 from '../assets/insight_3.png';
+
 export default function LatestInsights() {
   const articles = [
     {
@@ -9,7 +13,7 @@ export default function LatestInsights() {
       readTime: "6 Min Read",
       title: "The Standard Operating Procedure Matrix: How to Write Workflows That Execs Actually Run",
       desc: "An actionable breakdown of systemizing business communications and training parameters to make operations founder-independent.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop",
+      image: insight1,
       date: "June 14, 2026"
     },
     {
@@ -17,7 +21,7 @@ export default function LatestInsights() {
       readTime: "8 Min Read",
       title: "Valuation Ceilings: Isolating the Operational Bottlenecks That Drop Exit Multiples",
       desc: "How corporate buyers assess dependency liabilities, manual data pipelines, and sales team vulnerabilities during due diligence.",
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop",
+      image: insight2,
       date: "May 28, 2026"
     },
     {
@@ -25,7 +29,7 @@ export default function LatestInsights() {
       readTime: "5 Min Read",
       title: "Outcome-Based Pricing Models: Decoupling Your Agency or Consulting Revenue From Time",
       desc: "Stop billing by the hour. Discover how to construct high-ticket pricing frameworks pegged strictly to financial results and deliverables.",
-      image: "https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=600&auto=format&fit=crop",
+      image: insight3,
       date: "May 09, 2026"
     }
   ];

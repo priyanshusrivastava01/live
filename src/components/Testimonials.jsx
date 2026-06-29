@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Play, X, Quote, ArrowLeft, ArrowRight, Video, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import testimonial1 from '../assets/testimonial_1.png';
+import testimonial2 from '../assets/testimonial_2.png';
+import testimonial3 from '../assets/testimonial_3.png';
+
 const LinkedinIcon = ({ className }) => (
   <svg viewBox="0 0 24 24" className={className} stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -22,7 +26,7 @@ export default function Testimonials() {
       rating: 5,
       quote: "\"[Replace with verified quote explaining the impact of your operational advisory, revenue systems, or M&A support on the business.]\"",
       metric: "[Replace with Outcome Metric - e.g. +400k revenue]",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop", // placeholder portrait
+      image: testimonial1,
       linkedinUrl: "[Replace with client's LinkedIn URL]",
       videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4"
     },
@@ -34,7 +38,7 @@ export default function Testimonials() {
       rating: 5,
       quote: "\"[Replace with verified quote explaining the time-saving advantages, SOP playbooks implementation, or workflow automations deployed.]\"",
       metric: "[Replace with Outcome Metric - e.g. 15h saved/wk]",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop",
+      image: testimonial2,
       linkedinUrl: "[Replace with client's LinkedIn URL]",
       videoUrl: "https://www.w3schools.com/html/movie.mp4"
     },
@@ -46,7 +50,7 @@ export default function Testimonials() {
       rating: 5,
       quote: "\"[Replace with verified quote explaining the brand positioning restructuring, value pricing strategies, or exit readiness audits.]\"",
       metric: "[Replace with Outcome Metric - e.g. 9.2x acquisition multiple]",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop",
+      image: testimonial3,
       linkedinUrl: "[Replace with client's LinkedIn URL]",
       videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4"
     }
@@ -63,37 +67,40 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-bgDark text-white py-24 px-6 md:px-12 relative overflow-hidden border-b border-white/[0.04]">
+    <section className="bg-bgCanvas text-textPrimary py-24 px-6 md:px-12 relative overflow-hidden border-b border-black/[0.03]">
       {/* Background radial highlight */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[50%] h-[50%] bg-accentGold/[0.015] rounded-full filter blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[50%] h-[50%] bg-accentGold/[0.01] rounded-full filter blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
         
         {/* Header with Navigation */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="space-y-4 text-left">
-            <span className="text-[10px] uppercase font-bold tracking-widest text-accentGold font-heading block">
-              Executive Feedback
+        <div className="flex flex-col items-center text-center mb-16 gap-6">
+          <div className="space-y-4 max-w-4xl mx-auto">
+            <span className="inline-block text-[11px] tracking-[0.25em] font-bold text-accentGold mb-6 uppercase font-heading">
+              — EXECUTIVE FEEDBACK
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-none">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold text-black tracking-tight leading-[1.02] font-heading">
               Client Testimonials
+              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[5rem] font-serif italic text-textSecondary mt-4 font-normal">
+                Proven Impact, <span className="bg-gradient-to-br from-[#E6C15C] via-[#C9A227] to-[#9C7A1D] bg-clip-text text-transparent font-bold font-serif">Verified Results.</span>
+              </span>
             </h2>
-            <p className="text-sm text-gray-400 font-light max-w-xl">
+            <p className="text-textSecondary font-serif italic text-base md:text-lg leading-relaxed max-w-2xl mx-auto mt-6">
               Hear directly from the company directors, corporate officers, and CEOs who have scaled their operations and decoupled themselves from day-to-day administration.
             </p>
           </div>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 mt-4">
             <button
               onClick={() => handleScroll('left')}
-              className="p-3.5 rounded-full border border-white/10 hover:border-accentGold hover:text-accentGold transition-all duration-300 cursor-pointer"
+              className="p-3.5 rounded-full border border-black/[0.08] text-textSecondary hover:border-accentGold hover:text-accentGold hover:bg-white transition-all duration-300 cursor-pointer shadow-premium"
               aria-label="Scroll left"
             >
               <ArrowLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => handleScroll('right')}
-              className="p-3.5 rounded-full border border-white/10 hover:border-accentGold hover:text-accentGold transition-all duration-300 cursor-pointer"
+              className="p-3.5 rounded-full border border-black/[0.08] text-textSecondary hover:border-accentGold hover:text-accentGold hover:bg-white transition-all duration-300 cursor-pointer shadow-premium"
               aria-label="Scroll right"
             >
               <ArrowRight className="w-4 h-4" />
@@ -109,18 +116,18 @@ export default function Testimonials() {
           {testimonials.map((test) => (
             <div
               key={test.id}
-              className="flex-shrink-0 w-full sm:w-[480px] snap-start bg-black/40 border border-white/[0.05] rounded-premium p-6 sm:p-8 flex flex-col justify-between group hover:border-accentGold/20 transition-all duration-500 relative"
+              className="flex-shrink-0 w-full sm:w-[480px] snap-start bg-white border border-black/[0.07] rounded-premium p-6 sm:p-8 flex flex-col justify-between group hover:border-accentGold/20 transition-all duration-500 relative shadow-premium"
             >
               <div className="space-y-6">
                 
                 {/* Video testimonial card block */}
-                <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-gray-900 border border-white/10">
+                <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-gray-100 border border-black/[0.06]">
                   <img
                     src={test.image}
                     alt={test.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/25 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-black/15 group-hover:bg-black/10 transition-colors duration-300" />
                   
                   {/* Play Button Overlay */}
                   <button
@@ -131,7 +138,7 @@ export default function Testimonials() {
                   </button>
 
                   {/* Video Badge */}
-                  <span className="absolute bottom-4 left-4 bg-bgDark/80 backdrop-blur text-[9px] font-extrabold uppercase tracking-widest text-accentGold border border-accentGold/20 px-2.5 py-1 rounded flex items-center gap-1.5">
+                  <span className="absolute bottom-4 left-4 bg-bgDark/85 backdrop-blur text-[9px] font-extrabold uppercase tracking-widest text-accentGold border border-accentGold/20 px-2.5 py-1 rounded flex items-center gap-1.5">
                     <Video className="w-3.5 h-3.5" />
                     [Replace with Video Testimonial]
                   </span>
@@ -142,40 +149,40 @@ export default function Testimonials() {
                   {[...Array(test.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-accentGold text-accentGold" />
                   ))}
-                  <span className="text-[10px] text-gray-400 font-semibold pl-2 uppercase tracking-wider">
+                  <span className="text-[10px] text-textSecondary font-semibold pl-2 uppercase tracking-wider font-heading">
                     [Certified Rating]
                   </span>
                 </div>
 
                 {/* Quote Text */}
                 <div className="relative space-y-4">
-                  <Quote className="w-8 h-8 text-accentGold/20 absolute -top-2 -left-2" />
-                  <p className="text-[13px] text-gray-300 leading-relaxed font-light italic relative z-10 pl-6 text-left">
+                  <Quote className="w-8 h-8 text-accentGold/10 absolute -top-2 -left-2" />
+                  <p className="text-[13.5px] text-textSecondary leading-relaxed font-light italic relative z-10 pl-6 text-left font-body">
                     {test.quote}
                   </p>
                 </div>
               </div>
 
               {/* Author, Result & LinkedIn */}
-              <div className="pt-6 border-t border-white/[0.05] flex justify-between items-end mt-8">
+              <div className="pt-6 border-t border-black/[0.05] flex justify-between items-end mt-8">
                 <div className="text-left">
                   <div className="flex items-center space-x-2">
-                    <h4 className="text-sm font-bold text-white leading-none">
+                    <h4 className="text-sm font-bold text-textPrimary leading-none font-heading">
                       {test.name}
                     </h4>
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-accentGold transition-colors"
+                      className="text-textSecondary hover:text-accentGold transition-colors"
                       title={test.linkedinUrl}
                     >
                       <LinkedinIcon className="w-3.5 h-3.5" />
                     </a>
                   </div>
-                  <span className="text-[10px] text-accentGold mt-1.5 block">
+                  <span className="text-[10px] text-accentGold mt-1.5 block font-heading font-semibold">
                     {test.role}, {test.company}
                   </span>
                 </div>
-                <span className="text-[9px] font-bold text-white bg-white/[0.06] border border-white/[0.08] px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-[9px] font-bold text-accentGold bg-accentGold/10 border border-accentGold/20 px-3 py-1 rounded-full uppercase tracking-wider font-heading">
                   {test.metric}
                 </span>
               </div>

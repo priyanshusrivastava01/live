@@ -32,7 +32,6 @@ export default function Navbar() {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Case Studies', href: '#case-studies' },
     { name: 'Resources', href: '#insights' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -49,8 +48,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-2 text-xl font-extrabold tracking-tight">
-            <span className="font-heading text-textPrimary">MARCUS</span>
-            <span className="font-heading text-accentGold font-light">VANCE</span>
+            <span className="font-heading text-textPrimary">ARUNN</span>
+            <span className="font-heading text-accentGold font-light">GUPTAA</span>
             <span className="w-1.5 h-1.5 rounded-full bg-accentGold inline-block"></span>
           </a>
 

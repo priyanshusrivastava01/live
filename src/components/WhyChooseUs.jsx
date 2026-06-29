@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
           </p>
           <div className="p-5 border-l-2 border-accentGold bg-black/[0.015] rounded-r-xl">
             <p className="text-xs italic text-textSecondary leading-relaxed">
-              "Marcus Vance's framework didn't just give us a strategy—it gave us an operating platform that allowed us to step back and double EBIT in 14 months."
+              "Arunn Guptaa's framework didn't just give us a strategy—it gave us an operating platform that allowed us to step back and double EBIT in 14 months."
             </p>
             <span className="text-[10px] font-bold text-textPrimary tracking-wider uppercase block mt-2">
               — Chief Operating Officer, Nexus Group

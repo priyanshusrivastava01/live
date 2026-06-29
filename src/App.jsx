@@ -6,15 +6,11 @@ import TrustedBy from './components/TrustedBy';
 import ProblemSection from './components/ProblemSection';
 import SignatureFramework from './components/SignatureFramework';
 import Services from './components/Services';
-import WhyChooseUs from './components/WhyChooseUs';
-import CaseStudies from './components/CaseStudies';
 import Testimonials from './components/Testimonials';
 import SocialProof from './components/SocialProof';
 import About from './components/About'; // Founder Story & Timeline Section
-import LeadMagnet from './components/LeadMagnet';
 import LatestInsights from './components/LatestInsights';
 import FAQ from './components/FAQ';
-import ConsultationCTA from './components/ConsultationCTA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -42,11 +38,7 @@ export default function App() {
           {/* 7. Strategic Value Services Grid */}
           <Services />
 
-          {/* 8. Distinct Competitive Pillars */}
-          <WhyChooseUs />
 
-          {/* 9. Case Studies & Before/After Interactive Slider */}
-          <CaseStudies />
 
           {/* 10. Testimonials Video Card Swipe Carousel */}
           <Testimonials />
@@ -57,8 +49,6 @@ export default function App() {
           {/* 12. Founder Story Biography & Professional Milestones */}
           <About />
 
-          {/* 13. Low-Friction Growth Checklist Lead Magnet Capture */}
-          <LeadMagnet />
 
           {/* 14. Latest Strategic Insights Briefs */}
           <LatestInsights />
@@ -66,8 +56,6 @@ export default function App() {
           {/* 15. FAQ Collapsible Accordions */}
           <FAQ />
 
-          {/* 16. Onboarding Journey & Booking CTA */}
-          <ConsultationCTA />
 
           {/* 17. Intake Form Application, Booking Calendar & Headquarters Maps */}
           <Contact />
