@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquareCode, Calendar, Clock, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, Send, MessageSquareCode, Calendar, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Magnetic from './Magnetic';
 
@@ -36,13 +36,22 @@ export default function Contact() {
     setError(null);
     setSubmitted(false);
 
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const payload = {
+        fullName: formState.name,
+        email: formState.email,
+        phone: '',
+        message: `Company: ${formState.company}\nRevenue: ${formState.revenue || 'Not Provided'}\n\nMessage: ${formState.message}`
+      };
+
+      const response = await fetch(`${API_URL}/api/leads`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formState),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
@@ -102,8 +111,8 @@ export default function Contact() {
                   <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block">
                     Direct Email
                   </span>
-                  <a href="mailto:arun@salesoverflow.in" className="text-sm font-bold text-white hover:text-[#E6C15C] transition-colors font-body">
-                    arun@salesoverflow.in
+                  <a href="mailto:info@arunlive.com" className="text-sm font-bold text-white hover:text-[#E6C15C] transition-colors font-body">
+                    info@arunlive.com
                   </a>
                 </div>
               </div>
@@ -116,59 +125,10 @@ export default function Contact() {
                   <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block">
                     Voice Line / Chat
                   </span>
-                  <a href="tel:+919999988888" className="text-sm font-bold text-white hover:text-[#E6C15C] transition-colors font-body">
-                    +91 99999 88888
+                  <a href="tel:+91967011167" className="text-sm font-bold text-white hover:text-[#E6C15C] transition-colors font-body">
+                    +91 96701 11167
                   </a>
                 </div>
-              </div>
-
-              <div className="flex items-start space-x-4 group">
-                <div className="p-3 bg-white/5 rounded-xl border border-white/[0.05] shadow-sm text-accentGold group-hover:bg-accentGold/10 transition-colors">
-                  <Clock className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block">
-                    Availability
-                  </span>
-                  <span className="text-sm font-bold text-white font-body">
-                    Mon - Fri: 10:00 - 18:00 IST
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4 group">
-                <div className="p-3 bg-white/5 rounded-xl border border-white/[0.05] shadow-sm text-accentGold group-hover:bg-accentGold/10 transition-colors">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block">
-                    Headquarters
-                  </span>
-                  <span className="text-sm font-bold text-white font-body">
-                    DLF Cyber City, Gurugram, Haryana, India
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Premium Custom Map Mock */}
-            <div className="relative aspect-[16/9] bg-black border border-white/[0.08] rounded-2xl overflow-hidden shadow-2xl p-4 flex flex-col justify-between group">
-              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#C9A227_1.5px,transparent_1.5px)] [background-size:18px_18px] pointer-events-none" />
-              <div className="absolute top-[35%] left-[40%] w-[1.5px] h-[50%] bg-[#E6C15C]/15 rotate-45 pointer-events-none" />
-              <div className="absolute top-[10%] left-[20%] w-[1.5px] h-[75%] bg-[#E6C15C]/15 -rotate-12 pointer-events-none" />
-              
-              <div className="absolute top-[45%] left-[55%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-                <span className="absolute w-8 h-8 bg-accentGold/40 rounded-full animate-ping" />
-                <span className="absolute w-4 h-4 bg-accentGold rounded-full shadow-[0_0_15px_rgba(201,162,39,0.8)]" />
-              </div>
-
-              <span className="relative z-10 bg-white/[0.05] backdrop-blur border border-white/10 text-[8px] font-bold uppercase tracking-widest text-[#E6C15C] px-2.5 py-1 rounded w-fit text-left">
-                Gurugram, IN
-              </span>
-
-              <div className="relative z-10 bg-[#0F0F10]/95 backdrop-blur-xl p-3.5 rounded-xl border border-white/[0.08] space-y-1 w-fit max-w-[220px] text-left shadow-2xl transition-all duration-300 group-hover:border-accentGold/30">
-                <h4 className="text-[10px] font-bold text-white uppercase tracking-wider">DLF Cyber City</h4>
-                <p className="text-[9px] text-gray-400 font-light leading-snug">Phase 3, Sector 24, Gurugram</p>
               </div>
             </div>
 
@@ -334,10 +294,12 @@ export default function Contact() {
               
               <Magnetic>
                 <a
-                  href="#"
+                  href="https://www.arunlive.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3.5 rounded-full border border-white/10 group-hover:border-accentGold text-white hover:text-accentGold text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-colors flex items-center gap-1.5"
                 >
-                  Book via Widget
+                  Book Now
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
               </Magnetic>

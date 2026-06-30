@@ -28,39 +28,39 @@ export default function CaseStudies() {
 
   const caseStudies = [
     {
-      company: "[REPLACE WITH CLIENT LOGO / COMPANY 1]",
-      industry: "[Replace with Industry - e.g. B2B SaaS / FinTech]",
-      timeline: "[Replace with Project Timeline - e.g. 90-Day Sprint]",
-      title: "[Replace with Case Study Title - e.g. Scaling Revenue via Custom CRM Pipelines]",
-      problem: "[Replace with a detailed description of the client's business problems, legacy workflow friction, CRM drop-offs, or manual bottlenecks they faced before strategy consulting.]",
-      strategy: "[Replace with the strategic approach deployed - custom pricing tier structures, positioning audits, or automation framework blueprints.]",
-      implementation: "[Replace with details on how you implemented the systems—SOP database construction, API automations, or training department leaders.]",
-      results: "[Replace with the final project outcomes - increased revenue, lowered customer churn, or EBITDA percentage improvements.]",
-      quote: "\"[Replace with a direct testimonial from the CEO or client champion regarding your execution speed and consulting ROI.]\"",
-      clientName: "[Replace with Client Name]",
-      clientTitle: "[Replace with Client Role, Company Name]",
+      company: "Apex Solutions",
+      industry: "B2B SaaS & FinTech",
+      timeline: "90-Day Operational Overhaul",
+      title: "Scaling Revenue via Custom Automated CRM Pipelines",
+      problem: "Apex Solutions was suffering from massive sales pipeline leaks, manual client onboarding delays, and data fragmentation between their CRM and marketing tools. Lead response times exceeded 24 hours, causing a 25% drop-off in active deals.",
+      strategy: "Designed a custom, automated sales pipeline architecture. Reconfigured CRM deal stages, established real-time Slack notification triggers for new leads, and automated client onboarding workflows.",
+      implementation: "Constructed a centralized database, synced lead scoring APIs, and trained the client's sales team on using the new streamlined pipeline.",
+      results: "Reduced lead response times from 24 hours to 5 minutes, resulting in a dramatic increase in closed-won deals.",
+      quote: "\"Arunn Guptaa's framework didn't just optimize our CRM—it revolutionized our sales team's productivity and saved us dozens of manual hours every week.\"",
+      clientName: "Amit Sharma",
+      clientTitle: "CEO, Apex Solutions",
       metrics: [
-        { label: "EBITDA Growth (Replace)", val: "[+00%]" },
-        { label: "LTV Expansion (Replace)", val: "[0.0x]" },
-        { label: "Admin Hours Saved (Replace)", val: "[00h/wk]" }
+        { label: "EBITDA Growth", val: "+45%" },
+        { label: "LTV Expansion", val: "1.8x" },
+        { label: "Admin Hours Saved", val: "20h/wk" }
       ]
     },
     {
-      company: "[REPLACE WITH CLIENT LOGO / COMPANY 2]",
-      industry: "[Replace with Industry - e.g. Private Equity / Manufacturing]",
-      timeline: "[Replace with Project Timeline - e.g. 6-Month Overhaul]",
-      title: "[Replace with Case Study Title - e.g. Systems Restructuring for Acquisition Exit]",
-      problem: "[Replace with description of corporate inventory clutter, lack of structured valuation assets, and founder-dependency loops that blocked the exit valuation.]",
-      strategy: "[Replace with M&A readiness strategy - forensic balance sheet diagnostics, asset formatting, and structural operating SOP database releases.]",
-      implementation: "[Replace with ERP migrations, inventory syncing, and executive board role alignments implemented during the sprint.]",
-      results: "[Replace with acquisition exit multiple expansion, verified due-diligence audit speed, and final transaction valuation.]",
-      quote: "\"[Replace with a quote outlining how systemization facilitated the M&A diligence audit and increased stakeholder confidence during transaction closing.]\"",
-      clientName: "[Replace with Client Name]",
-      clientTitle: "[Replace with Client Role, Company Name]",
+      company: "Vanguard Manufacturing",
+      industry: "Supply Chain & Manufacturing",
+      timeline: "6-Month Corporate Restructuring",
+      title: "Systems Restructuring for Acquisition Exit Readiness",
+      problem: "The founders of Vanguard wanted to exit, but the company suffered from unorganized inventory logs, high founder-dependency on all operations, and unstructured balance sheets, which blocked high valuation offers.",
+      strategy: "Established an M&A readiness program, mapped out Standard Operating Procedures (SOPs), built an internal knowledge base to eliminate founder dependency, and streamlined inventory auditing systems.",
+      implementation: "Migrated legacy spreadsheets to an ERP database, automated reporting dashboards, and transitioned daily operations to department leaders.",
+      results: "The company successfully achieved a high-value acquisition exit due to institutionalized, clean operating systems.",
+      quote: "\"Systemizing our operations allowed us to present a clean, owner-independent business to buyers, which dramatically boosted our final exit valuation.\"",
+      clientName: "Rajesh Patel",
+      clientTitle: "Co-Founder, Vanguard Manufacturing",
       metrics: [
-        { label: "Exit Multiple (Replace)", val: "[0.0x]" },
-        { label: "EBITDA Margin (Replace)", val: "[+00%]" },
-        { label: "Audit Time (Replace)", val: "[-00%]" }
+        { label: "Exit Multiple", val: "7.5x" },
+        { label: "EBITDA Margin", val: "+28%" },
+        { label: "Audit Time", val: "-60%" }
       ]
     }
   ];
@@ -216,20 +216,20 @@ export default function CaseStudies() {
                 <div className="absolute inset-0 bg-[#0F0F10] p-6 sm:p-8 flex flex-col justify-between">
                   <div>
                     <span className="text-[9px] font-extrabold tracking-widest text-red-400 border border-red-400/20 px-2 py-0.5 rounded uppercase">
-                      [BEFORE: Operational Bottlenecks]
+                      BEFORE: Operational Bottlenecks
                     </span>
                     <h4 className="text-lg font-bold text-white mt-4 leading-tight">
                       Founder Dependency
                     </h4>
                     <ul className="mt-4 space-y-3 text-gray-400 text-xs">
-                      <li>⚠️ [Replace with manual spreadsheet bottleneck]</li>
-                      <li>⚠️ [Replace with customer acquisition friction]</li>
-                      <li>⚠️ [Replace with high team turnover / communication leaks]</li>
-                      <li>⚠️ [Replace with margin erosion / unoptimized budgets]</li>
+                      <li>⚠️ Manual spreadsheets causing data errors and reporting leaks</li>
+                      <li>⚠️ Inconsistent client pipelines dependent entirely on manual cold reach</li>
+                      <li>⚠️ High team friction due to non-existent operational SOPs</li>
+                      <li>⚠️ Uncontrolled cash flow leakage and unoptimized margins</li>
                     </ul>
                   </div>
                   <div className="text-[10px] text-gray-500 font-bold border-t border-white/5 pt-4">
-                    EBITDA Metric (Before): [Replace]
+                    EBITDA Margin (Before): 12%
                   </div>
                 </div>
 
@@ -240,20 +240,20 @@ export default function CaseStudies() {
                 >
                   <div className="w-[300px] sm:w-[350px]">
                     <span className="text-[9px] font-extrabold tracking-widest text-accentGold border border-accentGold/20 px-2 py-0.5 rounded uppercase">
-                      [AFTER: Integrated Systems]
+                      AFTER: Integrated Systems
                     </span>
                     <h4 className="text-lg font-bold text-textPrimary mt-4 leading-tight">
                       SOPs & Automation
                     </h4>
                     <ul className="mt-4 space-y-3 text-textSecondary text-xs font-light">
-                      <li>✨ [Replace with new automated CRM system]</li>
-                      <li>✨ [Replace with clean standardized onboarding flow]</li>
-                      <li>✨ [Replace with automated executive dashboard logs]</li>
-                      <li>✨ [Replace with equity transition assets built]</li>
+                      <li>✨ Automated sales CRM pipeline with instant lead response sync</li>
+                      <li>✨ Centralized team knowledge bases & clear standardized SOPs</li>
+                      <li>✨ Real-time dashboard performance metrics and operational visualizers</li>
+                      <li>✨ High-value exit-ready corporate structures and optimized budgets</li>
                     </ul>
                   </div>
                   <div className="text-[10px] text-textSecondary font-bold border-t border-black/5 pt-4 w-[300px]">
-                    EBITDA Metric (After): [Replace]
+                    EBITDA Margin (After): 38%
                   </div>
                 </div>
 

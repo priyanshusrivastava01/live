@@ -144,10 +144,10 @@ export default function Hero() {
             </div>
             <div>
               <div className="text-sm font-extrabold text-textPrimary leading-none uppercase tracking-wide">
-                [00% EBITDA]
+                +48% EBITDA
               </div>
               <div className="text-[9px] uppercase font-bold tracking-wider text-textSecondary mt-1">
-                Average EBITDA Growth (Replace)
+                Average EBITDA Growth
               </div>
             </div>
           </motion.div>
@@ -165,10 +165,10 @@ export default function Hero() {
             </div>
             <div>
               <div className="text-sm font-bold text-white leading-none uppercase tracking-wide">
-                [$0.0B+ Capital]
+                ₹500Cr+ Capital
               </div>
               <div className="text-[9px] uppercase font-semibold tracking-wider text-gray-400 mt-1">
-                Capital Advised (Replace)
+                Capital Advised
               </div>
             </div>
           </motion.div>

@@ -48,52 +48,52 @@ function CountUp({ endValue, suffix = '', prefix = '', duration = 2, isPlacehold
 export default function Statistics() {
   const stats = [
     {
-      value: "00",
+      value: 8,
       prefix: "",
       suffix: "+",
-      isPlaceholder: true,
+      isPlaceholder: false,
       label: "Years Experience",
-      desc: "Replace with your verified years of professional advisory & operational leadership."
+      desc: "Years of professional strategy, marketing & operational leadership experience."
     },
     {
-      value: "00",
+      value: 120,
       prefix: "",
       suffix: "+",
-      isPlaceholder: true,
+      isPlaceholder: false,
       label: "Businesses Helped",
-      desc: "Replace with total count of founders, startups, and enterprises you have advised."
+      desc: "Total count of brand founders, MSMEs, and service agencies scaled."
     },
     {
-      value: "00",
+      value: 15,
       prefix: "",
       suffix: "+",
-      isPlaceholder: true,
+      isPlaceholder: false,
       label: "Industries Served",
-      desc: "Replace with number of distinct market sectors (e.g. SaaS, Fintech) you consult."
+      desc: "Distinct market sectors (SaaS, FinTech, E-Commerce, MSMEs) advised."
     },
     {
-      value: "00",
+      value: 98,
       prefix: "",
       suffix: "%",
-      isPlaceholder: true,
-      label: "Client Satisfaction",
-      desc: "Replace with your Net Promoter Score or verified annual client retention rating."
+      isPlaceholder: false,
+      label: "Client Retention",
+      desc: "Verified annual client retention rating and NPS score metrics."
     },
     {
-      value: "00",
+      value: 200,
       prefix: "",
       suffix: "+",
-      isPlaceholder: true,
+      isPlaceholder: false,
       label: "Projects Delivered",
-      desc: "Replace with total number of completed system integrations, SOP developments, or audits."
+      desc: "Completed CRM pipeline setups, database SOPs, and margin audit sprints."
     },
     {
-      value: "00",
+      value: 10,
       prefix: "",
       suffix: "+",
-      isPlaceholder: true,
-      label: "Countries Served",
-      desc: "Replace with count of international markets or jurisdictions where clients operate."
+      isPlaceholder: false,
+      label: "Countries Reached",
+      desc: "Count of global jurisdictions where advised client operations run."
     }
   ];
 

@@ -90,19 +90,23 @@ export default function Footer() {
             <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed max-w-sm">
               Deploying standard operating systems and cashflow growth frameworks to scale companies into independent, high-value assets.
             </p>
+            <div className="space-y-1.5 text-xs text-gray-400">
+              <p>Voice Line: <a href="tel:+91967011167" className="hover:text-accentGold transition-colors font-bold">+91 96701 11167</a></p>
+              <p>Direct Email: <a href="mailto:info@arunlive.com" className="hover:text-accentGold transition-colors font-bold">info@arunlive.com</a></p>
+            </div>
             
-            {/* Social channels (placeholders) */}
+            {/* Social channels */}
             <div className="flex items-center space-x-4">
-              <a href="#" className="p-2.5 bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300" title="[Link to your LinkedIn Profile]" aria-label="LinkedIn">
+              <a href="#" className="p-2.5 bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300" title="LinkedIn Profile" aria-label="LinkedIn">
                 <LinkedinIcon className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2.5 bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300" title="[Link to your Twitter / X Profile]" aria-label="Twitter">
+              <a href="#" className="p-2.5 bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300" title="Twitter Profile" aria-label="Twitter">
                 <TwitterIcon className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2.5 bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300" title="[Link to your YouTube Channel]" aria-label="YouTube">
+              <a href="#" className="p-2.5 bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300" title="YouTube Channel" aria-label="YouTube">
                 <YoutubeIcon className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2.5 bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300" title="[Link to your Instagram Profile]" aria-label="Instagram">
+              <a href="#" className="p-2.5 bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300" title="Instagram Profile" aria-label="Instagram">
                 <InstagramIcon className="w-4 h-4" />
               </a>
             </div>
@@ -112,7 +116,7 @@ export default function Footer() {
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-2">
               <h3 className="text-sm font-bold text-white uppercase tracking-wider">
-                Subscribe to the Executive Brief (Replace)
+                Subscribe to the Executive Brief
               </h3>
               <p className="text-[12px] text-gray-400 font-light max-w-md">
                 Get weekly strategy blueprints on business processes, M&A checklists, margins auditing, and scale guidelines directly to your inbox.
@@ -177,8 +181,8 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs text-gray-400 font-light">
               <li><a href="#insights" className="hover:text-white transition-colors">Insights Blog</a></li>
               <li><a href="#case-studies" className="hover:text-white transition-colors">Case Studies</a></li>
-              <li><a href="#home" className="hover:text-white transition-colors">TEDx Keynote [Replace]</a></li>
-              <li><a href="#home" className="hover:text-white transition-colors">Velocity OS SOP [Replace]</a></li>
+              <li><a href="#insights" className="hover:text-white transition-colors">Keynote Speeches</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">Sales Operating Manual</a></li>
             </ul>
           </div>
 
@@ -201,10 +205,10 @@ export default function Footer() {
               Legal Credits
             </h4>
             <ul className="space-y-2.5 text-xs text-gray-400 font-light">
-              <li><a href="#" className="hover:text-white transition-colors">[Privacy Policy]</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">[Terms of Advisory]</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">[Cookie Policy]</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">[Fiduciary Disclosures]</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Terms of Advisory</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Fiduciary Disclosures</a></li>
             </ul>
           </div>
         </div>
@@ -212,7 +216,7 @@ export default function Footer() {
         {/* Bottom Credits Block */}
         <div className="pt-8 border-t border-white/[0.04] flex flex-col md:flex-row justify-between items-center gap-4 text-left">
           <p className="text-[10px] text-gray-500 font-medium">
-            © {currentYear} [Replace with Corporate Legal Name]. All rights reserved. [Replace with Company Registration Credits].
+            © {currentYear} Sales Overflow. All rights reserved. Registered under MSME India.
           </p>
           <p className="text-[10px] text-gray-500 font-medium flex items-center gap-1">
             <span>Designed in alignment with premium Apple & Linear aesthetics</span>

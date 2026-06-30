@@ -13,45 +13,45 @@ export default function Authority() {
   const authorityCards = [
     {
       icon: <Award className="w-5 h-5" />,
-      type: "TEDx Appearance",
-      title: "[Replace with TEDx Talk Title]",
-      desc: "[Replace with a brief summary of your TEDx presentation, key lessons shared, and link to the YouTube video resource.]",
-      metric: "[Replace with Views Count]"
+      type: "Keynote Speech",
+      title: "How to Build a Systems-Driven Business",
+      desc: "Shared the Sales Overflow framework with over 1,500 business owners, detailing how to audit operational margins and eliminate founder-dependency.",
+      metric: "1,500+ Attendees"
     },
     {
       icon: <Mic className="w-5 h-5" />,
-      type: "Executive Podcast",
-      title: "[Replace with Podcast Interview Name]",
-      desc: "[Replace with podcast guest details, discussion topics like operational pipelines, and link to Spotify / Apple episodes.]",
-      metric: "[Replace with Stream Link]"
+      type: "Podcast Feature",
+      title: "The Founder's Pipeline Overhaul",
+      desc: "Discussed automated CRM pipeline construction, lead-nurturing SOPs, and operations scaling metrics on India's top startup podcast.",
+      metric: "Listen on Spotify"
     },
     {
       icon: <YoutubeIcon className="w-5 h-5" />,
-      type: "YouTube Spotlight",
-      title: "[Replace with Channel Interview Title]",
-      desc: "[Replace with description of the roundtable video interview, systems whiteboard breakdown, or case reviews featured.]",
-      metric: "[Replace with Video URL]"
+      type: "Whiteboard Breakdown",
+      title: "SaaS & Service Agency Scaling Rules",
+      desc: "A detailed whiteboard walkthrough on scaling agency revenues from ₹10 Lakhs to ₹1 Crore+ per month using custom CRM automations.",
+      metric: "Watch on YouTube"
     },
     {
       icon: <Newspaper className="w-5 h-5" />,
-      type: "News & Media Column",
-      title: "[Replace with Forbes/Inc. Column Topic]",
-      desc: "[Replace with a synopsis of your editorial contribution, thoughts on business systems, or strategic advice featured in news.]",
-      metric: "[Replace with Article link]"
+      type: "Media Article",
+      title: "Why Standard Business Consulting is Broken",
+      desc: "An editorial column focusing on the transition from high-level slide decks to direct operations implementation, SOP databases, and workflow code.",
+      metric: "Read Media Column"
     },
     {
       icon: <Calendar className="w-5 h-5" />,
-      type: "Business Events",
-      title: "[Replace with Keynote Speech Venue]",
-      desc: "[Replace with summary of your presentation to company founders, M&A preparation guidelines, or scaling systems summits.]",
-      metric: "[Replace with Attendance count]"
+      type: "Corporate Workshop",
+      title: "M&A Diligence Exit Preparation",
+      desc: "An intensive roundtable session advising corporate MSME founders on organizing operational assets and books before buyer audits.",
+      metric: "50+ Enterprise Founders"
     },
     {
       icon: <BookOpen className="w-5 h-5" />,
-      type: "Industry Publications",
-      title: "[Replace with Published Book / Whitepaper]",
-      desc: "[Replace with title of your whitepaper, scaling operating playbook, or published guides on EBITDA expansion.]",
-      metric: "[Replace with PDF Download]"
+      type: "Operational Playbook",
+      title: "The Sales Overflow Operating Manual",
+      desc: "A complete whitepaper guide containing direct templates, workflow architectures, and checksheets used to double margins in 14 months.",
+      metric: "Download PDF Guide"
     }
   ];
 

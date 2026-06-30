@@ -6,6 +6,13 @@ import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
 import mongoose from 'mongoose';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import mongoSanitize from 'express-mongo-sanitize';
+
+// Import db connection and routes
+import connectDB from './db.js';
+import leadRoutes from './routes/leadRoutes.js';
 
 // Load environmental variables
 dotenv.config();
@@ -13,8 +20,46 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Enable CORS and JSON parsing middleware
-app.use(cors());
+// Security Middlewares
+app.use(helmet());
+
+// Workaround for express-mongo-sanitize compatibility with Express 5 read-only req.query getter
+app.use((req, res, next) => {
+  if (req.query) {
+    const rawQuery = req.query;
+    Object.defineProperty(req, 'query', {
+      value: { ...rawQuery },
+      writable: true,
+      configurable: true,
+      enumerable: true
+    });
+  }
+  next();
+});
+app.use(mongoSanitize());
+
+// Rate Limiter for API endpoints
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    success: false,
+    error: 'Too many requests from this IP, please try again after 15 minutes.'
+  }
+});
+app.use('/api/', apiLimiter);
+
+// Enable CORS with environment configurations
+const corsOptions = {
+  origin: process.env.FRONTEND_URL ? process.env.FRONTEND_URL.split(',') : '*',
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
+// JSON parsing middleware
 app.use(express.json());
 
 // Resolve __dirname in ESM
@@ -37,25 +82,10 @@ if (!fs.existsSync(SUBSCRIBERS_FILE)) {
   fs.writeFileSync(SUBSCRIBERS_FILE, JSON.stringify([], null, 2));
 }
 
-// MongoDB Connection Setup
-const MONGO_URI = process.env.MONGODB_URI || process.env.MONGO_URI;
-let isMongoConnected = false;
+// Connect to MongoDB
+connectDB();
 
-if (MONGO_URI) {
-  mongoose.connect(MONGO_URI)
-    .then(() => {
-      console.log('Successfully connected to MongoDB Database.');
-      isMongoConnected = true;
-    })
-    .catch((err) => {
-      console.error('MongoDB connection error, falling back to local JSON database:', err.message);
-      isMongoConnected = false;
-    });
-} else {
-  console.log('No MONGODB_URI found in environmental variables. Running on local JSON Database.');
-}
-
-// Define MongoDB Schemas and Models
+// Define MongoDB Schemas and Models for legacy endpoints
 const contactSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
@@ -108,8 +138,11 @@ const getMailTransporter = () => {
   return null;
 };
 
-// API Endpoint: Handle Strategic Session Contact Form Submissions
-app.post('/api/contact', async (req, res) => {
+// Mount Lead Routes
+app.use('/api/leads', leadRoutes);
+
+// API Endpoint: Handle Strategic Session Contact Form Submissions (Legacy)
+app.post('/api/contact', async (req, res, next) => {
   const { name, email, company, revenue, message } = req.body;
 
   // Validation
@@ -128,6 +161,7 @@ app.post('/api/contact', async (req, res) => {
 
   try {
     let savedDocId = null;
+    const isMongoConnected = mongoose.connection.readyState === 1;
 
     if (isMongoConnected) {
       // Save to MongoDB
@@ -179,13 +213,12 @@ app.post('/api/contact', async (req, res) => {
     });
 
   } catch (error) {
-    console.error('Error saving application submission:', error);
-    return res.status(500).json({ success: false, error: 'Internal server error saving submission.' });
+    next(error);
   }
 });
 
 // API Endpoint: Handle Newsletter Subscriptions
-app.post('/api/subscribe', async (req, res) => {
+app.post('/api/subscribe', async (req, res, next) => {
   const { email } = req.body;
 
   if (!email) {
@@ -195,6 +228,8 @@ app.post('/api/subscribe', async (req, res) => {
   const normalizedEmail = email.toLowerCase().trim();
 
   try {
+    const isMongoConnected = mongoose.connection.readyState === 1;
+
     if (isMongoConnected) {
       // Check if already subscribed in MongoDB
       const existing = await SubscriberModel.findOne({ email: normalizedEmail });
@@ -231,15 +266,22 @@ app.post('/api/subscribe', async (req, res) => {
     });
 
   } catch (error) {
-    console.error('Error saving subscriber:', error);
-    return res.status(500).json({ success: false, error: 'Internal server error saving subscription.' });
+    next(error);
   }
+});
+
+// Centralized Error Handling Middleware
+app.use((err, req, res, next) => {
+  console.error('Centralized Error Handler:', err);
+  res.status(err.status || 500).json({
+    success: false,
+    error: err.message || 'Internal Server Error'
+  });
 });
 
 // Start Server
 app.listen(PORT, () => {
   console.log(`===============================================`);
   console.log(`  Sales Overflow Backend running on port ${PORT}`);
-  console.log(`  MongoDB connection URI: ${MONGO_URI ? 'Configured' : 'NOT Configured'}`);
   console.log(`===============================================`);
 });

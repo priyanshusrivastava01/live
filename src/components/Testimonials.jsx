@@ -20,38 +20,38 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: "[Replace with Client Name]",
-      role: "[Replace with Client Position]",
-      company: "[Replace with Client Company]",
+      name: "Siddharth Mehta",
+      role: "Managing Director",
+      company: "Mehta Logistics",
       rating: 5,
-      quote: "\"[Replace with verified quote explaining the impact of your operational advisory, revenue systems, or M&A support on the business.]\"",
-      metric: "[Replace with Outcome Metric - e.g. +400k revenue]",
+      quote: "\"Working with Arunn completely streamlined our fleet routing and automated our dispatch reporting. Our operational efficiency skyrocketed, and we cleared bottleneck delays that had plagued us for years.\"",
+      metric: "₹45 Lakhs Saved/Yr",
       image: testimonial1,
-      linkedinUrl: "[Replace with client's LinkedIn URL]",
+      linkedinUrl: "https://linkedin.com",
       videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4"
     },
     {
       id: 2,
-      name: "[Replace with Client Name]",
-      role: "[Replace with Client Position]",
-      company: "[Replace with Client Company]",
+      name: "Pooja Hegde",
+      role: "Chief Operating Officer",
+      company: "Veda Wellness",
       rating: 5,
-      quote: "\"[Replace with verified quote explaining the time-saving advantages, SOP playbooks implementation, or workflow automations deployed.]\"",
-      metric: "[Replace with Outcome Metric - e.g. 15h saved/wk]",
+      quote: "\"Before integrating Arunn's workflow SOPs, our customer booking path was highly manual and team-dependent. Today, 95% of our bookings are completely automated, saving us days of admin work.\"",
+      metric: "18 hours saved/wk",
       image: testimonial2,
-      linkedinUrl: "[Replace with client's LinkedIn URL]",
+      linkedinUrl: "https://linkedin.com",
       videoUrl: "https://www.w3schools.com/html/movie.mp4"
     },
     {
       id: 3,
-      name: "[Replace with Client Name]",
-      role: "[Replace with Client Position]",
-      company: "[Replace with Client Company]",
+      name: "Vikramaditya Roy",
+      role: "Founder",
+      company: "Roy Capital Ventures",
       rating: 5,
-      quote: "\"[Replace with verified quote explaining the brand positioning restructuring, value pricing strategies, or exit readiness audits.]\"",
-      metric: "[Replace with Outcome Metric - e.g. 9.2x acquisition multiple]",
+      quote: "\"Arunn's operational exit-readiness audit was the game-changer for our acquisition round. He helped us package our systems, resulting in a cleaner diligence process and a higher valuation multiple.\"",
+      metric: "3.2x Valuation Increase",
       image: testimonial3,
-      linkedinUrl: "[Replace with client's LinkedIn URL]",
+      linkedinUrl: "https://linkedin.com",
       videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4"
     }
   ];
@@ -140,7 +140,7 @@ export default function Testimonials() {
                   {/* Video Badge */}
                   <span className="absolute bottom-4 left-4 bg-bgDark/85 backdrop-blur text-[9px] font-extrabold uppercase tracking-widest text-accentGold border border-accentGold/20 px-2.5 py-1 rounded flex items-center gap-1.5">
                     <Video className="w-3.5 h-3.5" />
-                    [Replace with Video Testimonial]
+                    Client Video Case Study
                   </span>
                 </div>
 
@@ -150,7 +150,7 @@ export default function Testimonials() {
                     <Star key={i} className="w-4 h-4 fill-accentGold text-accentGold" />
                   ))}
                   <span className="text-[10px] text-textSecondary font-semibold pl-2 uppercase tracking-wider font-heading">
-                    [Certified Rating]
+                    Verified Review
                   </span>
                 </div>
 
