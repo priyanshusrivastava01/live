@@ -22,6 +22,7 @@ export default function Contact() {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     revenue: '',
     message: ''
@@ -42,7 +43,7 @@ export default function Contact() {
       const payload = {
         fullName: formState.name,
         email: formState.email,
-        phone: '',
+        phone: formState.phone,
         company: formState.company,
         revenue: formState.revenue,
         message: formState.message
@@ -60,7 +61,7 @@ export default function Contact() {
 
       if (response.ok && data.success) {
         setSubmitted(true);
-        setFormState({ name: '', email: '', company: '', revenue: '', message: '' });
+        setFormState({ name: '', email: '', phone: '', company: '', revenue: '', message: '' });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         setError(data.error || 'Failed to submit application. Please try again.');
@@ -175,6 +176,23 @@ export default function Contact() {
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                       className="w-full bg-[#18181B] border border-white/[0.08] rounded-xl px-4 py-3.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-accentGold transition-all duration-300 focus:ring-1 focus:ring-accentGold/35"
                       placeholder="arun@company.com"
+                    />
+                  </div>
+                </div>
+
+                {/* Phone Number */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-1.5 text-left sm:col-span-2">
+                    <label className="text-[9px] uppercase font-bold tracking-widest text-gray-400 font-heading block">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formState.phone}
+                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                      className="w-full bg-[#18181B] border border-white/[0.08] rounded-xl px-4 py-3.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-accentGold transition-all duration-300 focus:ring-1 focus:ring-accentGold/35"
+                      placeholder="e.g. +91 98765 43210"
                     />
                   </div>
                 </div>
