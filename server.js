@@ -10,9 +10,10 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import mongoSanitize from 'express-mongo-sanitize';
 
-// Import db connection and routes
+// Import db connection, routes, and middleware
 import connectDB from './db.js';
 import leadRoutes from './routes/leadRoutes.js';
+import errorHandler from './middleware/errorHandler.js';
 
 // Load environmental variables
 dotenv.config();
@@ -270,14 +271,8 @@ app.post('/api/subscribe', async (req, res, next) => {
   }
 });
 
-// Centralized Error Handling Middleware
-app.use((err, req, res, next) => {
-  console.error('Centralized Error Handler:', err);
-  res.status(err.status || 500).json({
-    success: false,
-    error: err.message || 'Internal Server Error'
-  });
-});
+// Centralized Error Handling Middleware (dedicated file)
+app.use(errorHandler);
 
 // Start Server
 app.listen(PORT, () => {

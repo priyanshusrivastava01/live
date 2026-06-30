@@ -4,45 +4,36 @@ import { Resend } from 'resend';
 // crashes at startup when RESEND_API_KEY is still a placeholder.
 
 /**
- * Parse the compound message string stored in MongoDB back into readable fields.
- * The message is formatted as:
- *   Company: <company>\nRevenue: <revenue>\n\nMessage: <message>
- * Returns { company, revenue, userMessage } or falls back gracefully.
- */
-const parseMessage = (rawMessage = '') => {
-  const companyMatch = rawMessage.match(/^Company:\s*(.+)/m);
-  const revenueMatch = rawMessage.match(/^Revenue:\s*(.+)/m);
-  const messageMatch = rawMessage.match(/^Message:\s*([\s\S]+)/m);
-
-  return {
-    company: companyMatch ? companyMatch[1].trim() : 'N/A',
-    revenue: revenueMatch ? revenueMatch[1].trim() : 'N/A',
-    userMessage: messageMatch ? messageMatch[1].trim() : rawMessage.trim()
-  };
-};
-
-/**
  * Sends a lead notification email via Resend.
  * Called after the lead is saved to MongoDB.
- * All errors are caught internally — never throws.
+ * All errors are caught internally — NEVER throws or rejects.
  *
  * @param {Object} lead - The saved Mongoose Lead document.
  */
 export const sendLeadNotificationEmail = async (lead) => {
   const apiKey = process.env.RESEND_API_KEY;
-  const notifyEmail = process.env.NOTIFICATION_TO_EMAIL || 'info@arunlive.com';
+
+  // ADMIN_EMAIL is the primary var; NOTIFICATION_TO_EMAIL is the legacy fallback
+  const notifyEmail =
+    process.env.ADMIN_EMAIL ||
+    process.env.NOTIFICATION_TO_EMAIL ||
+    'info@arunlive.com';
 
   if (!apiKey || apiKey === 'your_resend_api_key_here') {
     console.warn('[Email] RESEND_API_KEY is not configured. Skipping email notification.');
     return;
   }
 
-  const { company, revenue, userMessage } = parseMessage(lead.message);
   const submissionTime = new Date(lead.createdAt).toLocaleString('en-IN', {
     timeZone: 'Asia/Kolkata',
     dateStyle: 'long',
     timeStyle: 'medium'
   });
+
+  // Use proper model fields (company, revenue) or fall back gracefully
+  const company = lead.company || 'N/A';
+  const revenue = lead.revenue || 'N/A';
+  const userMessage = lead.message || 'N/A';
 
   const htmlBody = `
 <!DOCTYPE html>
@@ -62,6 +53,7 @@ export const sendLeadNotificationEmail = async (lead) => {
     .message-box { background: #fafafa; border-left: 3px solid #C9A227; padding: 12px 16px; border-radius: 4px; font-size: 13px; color: #333; line-height: 1.6; white-space: pre-wrap; }
     .footer { background: #f4f4f4; padding: 16px 32px; text-align: center; font-size: 11px; color: #aaa; }
     .badge { display: inline-block; background: #C9A227; color: #fff; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; }
+    .divider { border: none; border-top: 1px solid #f0f0f0; margin: 4px 0 18px; }
   </style>
 </head>
 <body>
@@ -76,26 +68,32 @@ export const sendLeadNotificationEmail = async (lead) => {
         <div class="label">Full Name</div>
         <div class="value">${lead.fullName}</div>
       </div>
+      <hr class="divider" />
       <div class="field">
         <div class="label">Email Address</div>
         <div class="value"><a href="mailto:${lead.email}" style="color:#C9A227;">${lead.email}</a></div>
       </div>
+      <hr class="divider" />
       <div class="field">
         <div class="label">Phone</div>
         <div class="value">${lead.phone || 'Not Provided'}</div>
       </div>
+      <hr class="divider" />
       <div class="field">
         <div class="label">Company Name</div>
         <div class="value">${company}</div>
       </div>
+      <hr class="divider" />
       <div class="field">
         <div class="label">Annual Revenue Range</div>
         <div class="value">${revenue}</div>
       </div>
+      <hr class="divider" />
       <div class="field">
-        <div class="label">Core Scaling Bottleneck</div>
+        <div class="label">Core Scaling Bottleneck / Message</div>
         <div class="message-box">${userMessage}</div>
       </div>
+      <hr class="divider" />
       <div class="field">
         <div class="label">Submission Time (IST)</div>
         <div class="value">${submissionTime}</div>
@@ -119,12 +117,12 @@ export const sendLeadNotificationEmail = async (lead) => {
     });
 
     if (error) {
-      console.error('[Email] Resend API returned an error:', error.message || error);
+      console.error('[Email] Email sending failed. Resend error:', error.message || JSON.stringify(error));
       return;
     }
 
-    console.log('[Email] Lead notification sent successfully. Resend ID:', data?.id);
+    console.log('[Email] Email sent successfully. Resend ID:', data?.id);
   } catch (err) {
-    console.error('[Email] Failed to send lead notification email:', err.message);
+    console.error('[Email] Email sending failed. Exception:', err.message);
   }
 };

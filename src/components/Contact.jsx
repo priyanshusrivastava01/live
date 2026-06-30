@@ -43,7 +43,9 @@ export default function Contact() {
         fullName: formState.name,
         email: formState.email,
         phone: '',
-        message: `Company: ${formState.company}\nRevenue: ${formState.revenue || 'Not Provided'}\n\nMessage: ${formState.message}`
+        company: formState.company,
+        revenue: formState.revenue,
+        message: formState.message
       };
 
       const response = await fetch(`${API_URL}/api/leads`, {
