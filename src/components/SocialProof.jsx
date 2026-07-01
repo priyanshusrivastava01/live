@@ -1,47 +1,31 @@
 import React from 'react';
-import { Mail, Users, ArrowUpRight } from 'lucide-react';
-import { motion } from 'framer-motion';
-
-const LinkedinIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" className={className} stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-const YoutubeIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" className={className} stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" />
-  </svg>
-);
+import { Users, Award, Mic, Building2 } from 'lucide-react';
 
 export default function SocialProof() {
   const networks = [
     {
-      icon: <LinkedinIcon className="w-5 h-5" />,
-      size: "45,000+ Followers",
-      label: "LinkedIn Influence",
-      desc: "Active community of business leaders, founders, and startup CXOs."
-    },
-    {
-      icon: <Mail className="w-5 h-5" />,
-      size: "12,000+ Subscribers",
-      label: "Sales Overflow Letter",
-      desc: "Weekly breakdown of system workflows and operations scale plays."
-    },
-    {
-      icon: <YoutubeIcon className="w-5 h-5" />,
-      size: "25,000+ Subscribers",
-      label: "YouTube Insights",
-      desc: "In-depth video case studies and deconstructions of sales pipelines."
-    },
-    {
       icon: <Users className="w-5 h-5" />,
-      size: "350+ Founders",
-      label: "Elite Scaling Circle",
-      desc: "Exclusive boardroom group scaling together in real-time."
+      size: "1M+ Reached",
+      label: "Entrepreneurs Reached",
+      desc: "Empowering founders and business owners across India with scaling frameworks."
+    },
+    {
+      icon: <Award className="w-5 h-5" />,
+      size: "2,400+ Clients",
+      label: "Paid Customers & Community",
+      desc: "Delivering massive revenue growths and predictable operating systems."
+    },
+    {
+      icon: <Mic className="w-5 h-5" />,
+      size: "500+ Seminars",
+      label: "Seminars Conducted",
+      desc: "Keynote speaking and corporate coaching on M&A exits and scale-up strategies."
+    },
+    {
+      icon: <Building2 className="w-5 h-5" />,
+      size: "210+ Sectors",
+      label: "Industries Worked With",
+      desc: "Cross-industry strategic execution, optimization, and system audits."
     }
   ];
 

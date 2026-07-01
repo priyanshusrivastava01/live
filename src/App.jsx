@@ -6,6 +6,7 @@ import TrustedBy from './components/TrustedBy';
 import ProblemSection from './components/ProblemSection';
 import SignatureFramework from './components/SignatureFramework';
 import Services from './components/Services';
+import BooksShowcase from './components/BooksShowcase';
 import Testimonials from './components/Testimonials';
 import SocialProof from './components/SocialProof';
 import About from './components/About'; // Founder Story & Timeline Section
@@ -38,10 +39,8 @@ export default function App() {
           {/* 7. Strategic Value Services Grid */}
           <Services />
 
-
-
-          {/* 10. Testimonials Video Card Swipe Carousel */}
-          <Testimonials />
+          {/* 8. Books Showcase Section */}
+          <BooksShowcase />
 
           {/* 11. Network Audience Size Social Badges */}
           <SocialProof />
@@ -52,6 +51,9 @@ export default function App() {
 
           {/* 14. Latest Strategic Insights Briefs */}
           <LatestInsights />
+
+          {/* 10. Testimonials Video Card Swipe Carousel */}
+          <Testimonials />
 
           {/* 15. FAQ Collapsible Accordions */}
           <FAQ />

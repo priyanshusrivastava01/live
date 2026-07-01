@@ -1,35 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function TrustedBy() {
-  const stats = [
-    {
-      highlight: "TEDx",
-      highlightColor: "text-accentGold", // Styled gold tone
-      label: "SPEAKER"
-    },
-    {
-      highlight: "Amazon",
-      highlightColor: "text-textPrimary font-extrabold",
-      label: "#1 BESTSELLING AUTHOR"
-    },
-    {
-      highlight: "100+",
-      highlightColor: "text-textPrimary font-black",
-      label: "BRANDS TRANSFORMED"
-    },
-    {
-      highlight: "8 Fig",
-      highlightColor: "text-textPrimary font-black",
-      label: "REVENUE GENERATED"
-    },
-    {
-      highlight: "Systems",
-      highlightColor: "text-textPrimary font-bold italic font-serif",
-      label: "CONSULTING"
-    }
-  ];
+import featured1 from '../assets/carasoul/featured1.png';
+import featured2 from '../assets/carasoul/featured2.png';
+import featured3 from '../assets/carasoul/featured3.png';
+import featured4 from '../assets/carasoul/featured4.png';
+import featured5 from '../assets/carasoul/featured5.png';
+import featured6 from '../assets/carasoul/featured6.jpg';
+import featured7 from '../assets/carasoul/featured7.jpg';
+import featured8 from '../assets/carasoul/featured8.jpg';
 
+const images = [
+  featured1,
+  featured2,
+  featured3,
+  featured4,
+  featured5,
+  featured6,
+  featured7,
+  featured8
+];
+
+export default function TrustedBy() {
   return (
     <section className="bg-[#F5F2EB] border-y border-black/[0.06] py-7 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
@@ -37,32 +29,40 @@ export default function TrustedBy() {
         {/* Left Side Header */}
         <div className="flex items-center gap-4 w-full lg:w-auto shrink-0 justify-center lg:justify-start">
           <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-textSecondary font-heading">
-            Trusted Authority In
+            Featured In
           </span>
           <div className="hidden lg:block w-px h-8 bg-black/10 mx-2" />
         </div>
 
-        {/* Right Side Items Grid */}
-        <div className="w-full flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap items-center justify-between gap-6 sm:gap-8 lg:gap-4 flex-1">
-          {stats.map((stat, idx) => (
-            <React.Fragment key={idx}>
-              <div className="flex flex-col items-center sm:items-start text-center sm:text-left font-heading">
-                {/* Highlight Number/Brand */}
-                <span className={`text-base sm:text-lg tracking-tight leading-none ${stat.highlightColor}`}>
-                  {stat.highlight}
-                </span>
-                {/* Secondary Label */}
-                <span className="text-[9px] font-bold text-textSecondary uppercase tracking-widest mt-1">
-                  {stat.label}
-                </span>
-              </div>
-              
-              {/* Divider between items (hidden on last, hidden on mobile/responsive based on layout) */}
-              {idx < stats.length - 1 && (
-                <div className="hidden lg:block w-px h-8 bg-black/10 shrink-0" />
-              )}
-            </React.Fragment>
-          ))}
+        {/* Right Side Carousel */}
+        <div className="w-full flex-1 overflow-hidden relative">
+          {/* Faint gradient overlays on sides for a premium fading effect */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#F5F2EB] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#F5F2EB] to-transparent z-10 pointer-events-none" />
+          
+          <div className="flex overflow-hidden w-full">
+            <motion.div 
+              className="flex gap-16 items-center shrink-0 pr-16"
+              animate={{
+                x: [0, "-50%"]
+              }}
+              transition={{
+                ease: "linear",
+                duration: 25,
+                repeat: Infinity
+              }}
+            >
+              {/* Loop twice for seamless scrolling */}
+              {[...images, ...images].map((img, idx) => (
+                <img 
+                  key={idx} 
+                  src={img} 
+                  alt={`Featured logo ${idx + 1}`} 
+                  className="h-8 md:h-10 w-auto object-contain select-none pointer-events-none shrink-0"
+                />
+              ))}
+            </motion.div>
+          </div>
         </div>
 
       </div>

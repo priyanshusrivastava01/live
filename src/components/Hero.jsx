@@ -3,7 +3,7 @@ import { ArrowDown, ArrowUpRight, Award, ShieldCheck, TrendingUp } from 'lucide-
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import Magnetic from './Magnetic';
-import consultantImage from '../assets/consultant.png';
+import consultantImage from '../assets/ChatGPT Image Jul 1, 2026, 04_12_28 PM.png';
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -113,22 +113,14 @@ export default function Hero() {
         </div>
 
         {/* Portait & Achievement Cards */}
-        <div className="lg:col-span-5 relative flex justify-center items-end lg:mt-0 mt-8 w-full">
+        <div className="lg:col-span-5 relative flex justify-center items-end lg:mt-0 mt-8 w-full lg:-translate-y-8">
           <div className="relative w-full max-w-[420px] aspect-[4/5] overflow-hidden">
             <img
               src={consultantImage}
               alt="Arunn Guptaa Portrait"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-top scale-110 -translate-y-4"
             />
-            {/* Elegant overlay vignettes to blend portrait into the light canvas */}
-            {/* Fade bottom edge */}
-            <div className="absolute bottom-0 left-0 w-full h-[30%] bg-gradient-to-t from-bgCanvas via-bgCanvas/80 to-transparent pointer-events-none z-10" />
-            {/* Fade left edge for desktop */}
-            <div className="absolute top-0 left-0 h-full w-[25%] bg-gradient-to-r from-bgCanvas to-transparent pointer-events-none z-10 hidden lg:block" />
-            {/* Fade right edge for desktop */}
-            <div className="absolute top-0 right-0 h-full w-[15%] bg-gradient-to-l from-bgCanvas to-transparent pointer-events-none z-10 hidden lg:block" />
-            {/* Fade top edge */}
-            <div className="absolute top-0 left-0 w-full h-[15%] bg-gradient-to-b from-bgCanvas to-transparent pointer-events-none z-10" />
+
           </div>
 
           {/* Floating Achievement Card 1 (EBITDA Growth - Editable) */}
