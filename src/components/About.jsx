@@ -44,32 +44,32 @@ export default function About() {
 
           <div className="font-serif text-lg leading-relaxed text-textSecondary space-y-6">
             <p>
-              I didn't start with{' '}
+              I didn't start with a{' '}
               <span className="bg-[#FAF6EE] border border-[#E6C15C]/20 text-textPrimary px-2 py-0.5 rounded font-medium font-body">
-                100 clients
+                roster of 100+ clients
               </span>
               ,{' '}
               <span className="bg-[#FAF6EE] border border-[#E6C15C]/20 text-textPrimary px-2 py-0.5 rounded font-medium font-body">
-                large stages
+                speaking on global stages
               </span>
-              , or a{' '}
+              , or having a{' '}
               <span className="bg-[#FAF6EE] border border-[#E6C15C]/20 text-textPrimary px-2 py-0.5 rounded font-medium font-body">
                 bestselling book
-              </span>
-              .
+              </span>{' '}
+              to my name.
             </p>
 
             <p>
-              I started with a notebook, a big dream — and a business that{' '}
+              I began with just a notebook, a major goal — and a consulting practice that{' '}
               <span className="underline decoration-red-500 decoration-2 underline-offset-4 font-medium text-textPrimary">
-                barely survived on referrals.
+                struggled to survive on erratic referrals.
               </span>
             </p>
 
             <p>
-              For years, I watched business owners — brilliant people with incredible products — struggle to get clients. Not because they lacked skill. But because{' '}
+              For years, I saw talented business owners — brilliant people with incredible products — struggle to get high-paying clients. Not due to a lack of skill, but simply because{' '}
               <span className="bg-bgDark text-white px-2.5 py-1 rounded font-medium font-body text-sm inline-block">
-                nobody knew they existed.
+                they were the market's best-kept secret.
               </span>
             </p>
 
@@ -78,9 +78,9 @@ export default function About() {
             </p>
 
             <p>
-              I spent years studying what the top 1% of businesses do differently. And I discovered{' '}
+              I spent years analyzing the strategies of the top 1% of high-growth businesses. That research led me to{' '}
               <span className="underline decoration-red-500 decoration-2 underline-offset-4 font-medium text-textPrimary">
-                one uncomfortable truth:
+                one critical realization:
               </span>
             </p>
           </div>
@@ -89,30 +89,30 @@ export default function About() {
           <div className="bg-[#FAF6EE]/60 border border-accentGold/20 rounded-2xl p-8 my-12 text-center max-w-2xl mx-auto shadow-sm relative overflow-hidden">
             <Quote className="w-12 h-12 text-accentGold/5 absolute -top-2 -left-2" />
             <p className="text-xl sm:text-2xl font-serif italic text-textPrimary leading-relaxed">
-              "The best businesses don't chase customers. <br />
-              They build systems that <span className="bg-gradient-to-br from-[#E6C15C] via-[#C9A227] to-[#9C7A1D] bg-clip-text text-transparent font-bold font-serif">attract them.</span>"
+              "The most successful companies never chase customers. <br />
+              They design engines that <span className="bg-gradient-to-br from-[#E6C15C] via-[#C9A227] to-[#9C7A1D] bg-clip-text text-transparent font-bold font-serif">naturally attract them.</span>"
             </p>
           </div>
 
           <div className="font-serif text-lg leading-relaxed text-textSecondary space-y-6">
             <p>
-              In 2020, I put that belief to the test. A coaching business was stuck at{' '}
+              In 2020, I put this methodology to the test with a client's coaching business that was stuck at{' '}
               <span className="bg-[#FAF6EE] border border-[#E6C15C]/20 text-textPrimary px-2 py-0.5 rounded font-medium font-body">
-                ₹10 lakhs a month
+                a monthly revenue of ₹10 Lakhs
               </span>{' '}
-              — plateaued, frustrated, and ready to give up.
+              — hit a ceiling, and was unable to scale.
             </p>
 
             <p>
-              We rebuilt their marketing from scratch. Within months, they crossed{' '}
+              We overhauled their client acquisition engine. Within just a few months, they scaled past{' '}
               <span className="bg-bgDark text-white px-2.5 py-1 rounded font-medium font-body text-sm inline-block">
-                ₹1 Crore per month
+                ₹1 Crore in monthly revenue
               </span>{' '}
-              — in the middle of a pandemic.
+              — right during the peak of the pandemic.
             </p>
 
             <p className="text-accentGold font-medium italic">
-              That result became the foundation of the Sales Overflow Framework.
+              That breakthrough became the cornerstone of my consulting methodology.
             </p>
           </div>
         </div>
@@ -141,32 +141,32 @@ export default function About() {
 
             <div className="font-serif text-lg leading-relaxed text-textSecondary space-y-6">
               <p>
-                Around the same time, I started working with one of India's most respected influencers and business coaches. Their content was brilliant, but their business{' '}
+                Around the same time, I partnered with a prominent Indian business coach and creator. Their expertise was world-class, but their backend business{' '}
                 <span className="underline decoration-red-500 decoration-2 underline-offset-4 font-medium text-textPrimary">
-                  wasn't growing the way it deserved to.
+                  wasn't matching their massive online reach.
                 </span>
               </p>
 
               <p>
-                The problem wasn't <em>him</em>. The problem was positioning and marketing.
+                The bottleneck wasn't their knowledge or content. The problem lay in core positioning and client acquisition systems.
               </p>
 
               <p>
-                We applied the same framework — rebuilt his brand authority, sharpened his messaging, and created a system that attracted the right audience consistently.
+                We deployed the exact same model — redesigned their brand authority, structured their core message, and built a framework that operated consistently.
               </p>
 
               <p>
-                The result?{' '}
+                The outcome?{' '}
                 <span className="bg-[#FAF6EE] border border-[#E6C15C]/20 text-textPrimary px-2 py-0.5 rounded font-medium font-body">
-                  His business scaled 10X.
+                  We scaled his business by 10X
                 </span>{' '}
-                Not through hard selling. Not through cold outreach. But through smart, strategic marketing that made people come to <em>him</em>.
+                without resorting to aggressive sales tactics or endless cold outreach. Instead, we built authority systems that brought clients directly to him.
               </p>
 
               <p>
-                That's when I knew — this framework wasn't a one-time miracle.{' '}
+                That success proved to me that this model wasn't a fluke.{' '}
                 <span className="underline decoration-red-500 decoration-2 underline-offset-4 font-medium text-textPrimary">
-                  It was repeatable.
+                  It was a predictable system.
                 </span>
               </p>
             </div>
@@ -187,58 +187,57 @@ export default function About() {
           <div className="space-y-8 text-left">
             <div className="font-serif text-lg leading-relaxed text-textSecondary space-y-6">
               <p>
-                So I did something most consultants would{' '}
+                So I decided to take a step that most advisors{' '}
                 <span className="underline decoration-red-500 decoration-2 underline-offset-4 font-medium text-textPrimary">
-                  never dare to do.
+                  hesitate to take.
                 </span>{' '}
                 <span className="bg-bgDark text-white px-2.5 py-1 rounded font-medium font-body text-sm inline-block">
-                  I implemented it on myself.
+                  I deployed the model on my own agency.
                 </span>
               </p>
 
               <p>
-                I applied the Sales Overflow Framework to my own agency and consulting business.{' '}
-                I stopped chasing clients. I stopped cold pitching. I stopped relying on referrals and hoping the phone would ring.
+                I implemented these exact scaling systems in my own consulting practice. No more chasing prospects, no more cold emails, and no more hoping for the next referral.
               </p>
 
               <p>
                 Within months,{' '}
                 <span className="underline decoration-red-500 decoration-2 underline-offset-4 font-medium text-textPrimary">
-                  clients started coming on autopilot.
+                  high-tier clients began reaching out to us consistently
                 </span>{' '}
-                No chasing. No convincing. No discounting.
+                — with zero chasing and zero cold outreach.
               </p>
 
               <p>
-                That's the moment I realized — if it works for me, it can work for you too. Since then, I've worked with{' '}
+                That was the proof I needed: if it worked for my own business, it could work for any service business. Since then, I have helped{' '}
                 <span className="bg-[#FAF6EE] border border-[#E6C15C]/20 text-textPrimary px-2 py-0.5 rounded font-medium font-body">
-                  100+ brands
+                  over 100 brands
                 </span>{' '}
-                — coaches, consultants, MSMEs, service providers, and industry leaders across India.
+                — ranging from coaches and consultants to mid-sized enterprises across India.
               </p>
 
               <p>
-                And that's when I made a decision. I didn't want to keep this framework limited to the clients I could personally work with.{' '}
+                But I didn't want to limit this growth playbook to just my private clients.{' '}
                 <span className="underline decoration-red-500 decoration-2 underline-offset-4 font-medium text-textPrimary">
-                  Every business owner deserves to know this.
+                  Every founder deserves a reliable growth engine.
                 </span>
               </p>
 
               <p>
-                So I did what made the most sense —{' '}
+                So, I took all the learnings from scaling those 100+ companies and{' '}
                 <span className="bg-bgDark text-white px-2.5 py-1 rounded font-medium font-body text-sm inline-block">
-                  I wrote it all down.
+                  distilled them into a comprehensive manual.
                 </span>{' '}
-                Every principle. Every strategy. Every lesson from 100+ businesses, distilled into one place.
+                Every principle, action step, and template gathered in one place.
               </p>
             </div>
 
             {/* Bottom Slogan Quote Block */}
             <div className="bg-[#FAF6EE]/60 border border-accentGold/20 rounded-2xl p-8 my-12 text-center max-w-2xl mx-auto shadow-sm relative overflow-hidden">
               <p className="text-lg sm:text-xl font-serif text-textSecondary leading-relaxed">
-                That's why <span className="italic text-textPrimary font-semibold">this book exists.</span> <br />
-                That's why the <span className="font-bold text-accentGold font-heading">Sales Overflow Framework</span> was born — <br />
-                <span className="italic text-textPrimary font-semibold">so that every business owner can stop chasing and start attracting.</span>
+                That is the exact reason <span className="italic text-textPrimary font-semibold">I published this book.</span> <br />
+                That is why the <span className="font-bold text-accentGold font-heading">Sales Overflow Framework</span> was created — <br />
+                <span className="italic text-textPrimary font-semibold">to help founders escape the chase and build a magnetic business.</span>
               </p>
             </div>
           </div>
