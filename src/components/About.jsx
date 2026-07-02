@@ -2,7 +2,7 @@ import React from 'react';
 import { Quote } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-import speakingImage from '../assets/sales_overflow_workspace.png';
+import speakingImage from '../assets/ChatGPT Image Jul 2, 2026, 12_47_00 PM.webp';
 import seminarImage from '../assets/sales_overflow_strategy.png';
 
 export default function About() {
@@ -17,10 +17,10 @@ export default function About() {
         {/* Header Block */}
         <div className="space-y-4 mb-16">
           <span className="inline-block text-[11px] tracking-[0.25em] font-bold text-accentGold mb-4 uppercase font-heading">
-            — THE MAN BEHIND
+            — THE MAN BEHIND THE FRAMEWORK
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold text-black tracking-tight leading-[1.02] font-heading">
-            SALES OVERFLOW
+            ARUNN GUPTAA
             <span className="block text-2xl sm:text-3xl md:text-4xl font-serif italic text-textSecondary mt-4 font-normal">
               From Struggling Consultant To Building India's Most Practical <span className="bg-gradient-to-br from-[#E6C15C] via-[#C9A227] to-[#9C7A1D] bg-clip-text text-transparent font-bold font-serif">Sales Framework</span>
             </span>
