@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import { Play, X, Quote, ArrowLeft, ArrowRight, Video, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import testimonial1 from '../assets/testimonial_1.png';
-import testimonial2 from '../assets/testimonial_2.png';
-import testimonial3 from '../assets/testimonial_3.png';
+import testimonial1 from '../assets/testimonial_video_1.png';
+import testimonial2 from '../assets/testimonial_video_2.png';
+import testimonial3 from '../assets/testimonial_video_3.png';
+
+import video1 from '../assets/Video/0702.webm';
+import video2 from '../assets/Video/0702 (1).webm';
+import video3 from '../assets/Video/0702 (2).webm';
 
 const LinkedinIcon = ({ className }) => (
   <svg viewBox="0 0 24 24" className={className} stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -20,7 +24,7 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: "Siddharth Mehta",
+      name: "Ankit Agarwal",
       role: "Managing Director",
       company: "Mehta Logistics",
       rating: 5,
@@ -28,11 +32,11 @@ export default function Testimonials() {
       metric: "₹45 Lakhs Saved/Yr",
       image: testimonial1,
       linkedinUrl: "https://linkedin.com",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4"
+      videoUrl: video1
     },
     {
       id: 2,
-      name: "Pooja Hegde",
+      name: "Aditi Sharma",
       role: "Chief Operating Officer",
       company: "Veda Wellness",
       rating: 5,
@@ -40,11 +44,11 @@ export default function Testimonials() {
       metric: "18 hours saved/wk",
       image: testimonial2,
       linkedinUrl: "https://linkedin.com",
-      videoUrl: "https://www.w3schools.com/html/movie.mp4"
+      videoUrl: video3
     },
     {
       id: 3,
-      name: "Vikramaditya Roy",
+      name: "Karan Mehta",
       role: "Founder",
       company: "Roy Capital Ventures",
       rating: 5,
@@ -52,7 +56,7 @@ export default function Testimonials() {
       metric: "3.2x Valuation Increase",
       image: testimonial3,
       linkedinUrl: "https://linkedin.com",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4"
+      videoUrl: video2
     }
   ];
 

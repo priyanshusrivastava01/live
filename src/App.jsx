@@ -13,6 +13,7 @@ import About from './components/About'; // Founder Story & Timeline Section
 import LatestInsights from './components/LatestInsights';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
+import GoldenCTA from './components/GoldenCTA';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -61,6 +62,9 @@ export default function App() {
 
           {/* 17. Intake Form Application, Booking Calendar & Headquarters Maps */}
           <Contact />
+
+          {/* Golden CTA Banner Section */}
+          <GoldenCTA />
         </main>
 
         {/* Footer & Privacy Disclosures */}

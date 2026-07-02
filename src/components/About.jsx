@@ -3,7 +3,7 @@ import { Quote } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import speakingImage from '../assets/ChatGPT Image Jul 2, 2026, 12_47_00 PM.webp';
-import seminarImage from '../assets/sales_overflow_strategy.png';
+import seminarImage from '../assets/ChatGPT Image Jul 2, 2026, 06_34_24 PM.webp';
 
 export default function About() {
   return (
